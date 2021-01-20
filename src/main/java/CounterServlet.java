@@ -10,16 +10,22 @@ import java.io.PrintWriter;
 public class CounterServlet extends HttpServlet {
     int counter = 0;
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       counter = counter +1;
+
      resp.setContentType("text/html");
         String content = "<h1>My Awesome Portfolio</h1>";
         content += "<p>welcome to my page!</p>";
         content += "<a href='/resume'>My Resume</a>";
+        String reset = req.getParameter("reset");
 
         PrintWriter out = resp.getWriter();
+
+        if(reset != null) {
+            counter = 0;
+        }
+        counter = counter +1;
         out.println(content);
 
-        out.println("This page has been visited a total of " + counter + " times!");
+        out.println("<h1>This page has been visited a total of " + counter + " times!</h1>");
     }
 }
 
