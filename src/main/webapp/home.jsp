@@ -23,7 +23,7 @@
     <form action="user-profile.jsp" method="get">
         <input type="hidden" id="username" name="username" value="Chris">
         <input type="hidden" id="user-id" name="user-id" value ="12345">
-        <button type = "submit">Go there</button>
+        <button type = "submit">Go there now</button>
     </form>
 
     <h3>Add a to do</h3>
