@@ -7,10 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--This is an instance variable--%>
-<%! int pageNumber = 1; %>
+<%--<%! int pageNumber = 1; %>--%>
+<% request.setAttribute("number", 1); %>
+<% request.setAttribute("title", "Home Page"); %>
 <html>
 <head>
-    <title>Home Page</title>
+    <title>${title}</title>
 </head>
 <body>
     <%@ include file ="partials/navbar.jsp"%>
@@ -20,7 +22,7 @@
     <h3>View Chris' Profile</h3>
     <form action="user-profile.jsp" method="get">
         <input type="hidden" id="username" name="username" value="Chris">
-        <input type="hidden" id="lastname" name="lastname" value ="Parker">
+        <input type="hidden" id="user-id" name="user-id" value ="12345">
         <button type = "submit">Go there</button>
     </form>
 
@@ -30,7 +32,7 @@
         <button type="submit"> Add to List</button>
     </form>
 <%--    This is how you evaluate the variable in the head--%>
-    <p>The Page Number is:<%= pageNumber %></p>
+<%--    <p>The Page Number is:<%= pageNumber %></p>--%>
     <%@ include file="partials/footer.jsp"%>
 </body>
 </html>
