@@ -1,11 +1,12 @@
 package models;
 
-public class Quotes {
+public class Quote {
     private long id;
-    private int authorId;
+    private Author author;
     private String content;
 
-    public Quotes(){}
+    public Quote() {
+    }
 
     public long getId() {
         return id;
@@ -15,12 +16,12 @@ public class Quotes {
         this.id = id;
     }
 
-    public int getAuthorId() {
-        return authorId;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public String getContent() {

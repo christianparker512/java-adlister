@@ -1,16 +1,14 @@
 package models;
 
-import java.util.Date;
-
 public class Album {
     private long id;
     private String artist;
     private String name;
-    private Date birthDate;
+    private int releaseDate;
     private double sales;
     private String genre;
 
-    public Album(){}
+    public Album() {}
 
     public long getId() {
         return id;
@@ -36,12 +34,12 @@ public class Album {
         this.name = name;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public int getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setReleaseDate(int releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public double getSales() {

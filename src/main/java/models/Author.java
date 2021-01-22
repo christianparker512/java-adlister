@@ -1,11 +1,13 @@
 package models;
 
-public class Authors {
+public class Author {
+
     private long id;
     private String firstName;
     private String lastName;
 
-    public Authors(){}
+    public Author() {
+    }
 
     public long getId() {
         return id;
@@ -30,4 +32,5 @@ public class Authors {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }

@@ -1,41 +1,82 @@
+import daos.DaoFactory;
 import models.Album;
-import models.Authors;
-import models.Quotes;
+import models.Author;
+import models.Product;
+import models.Quote;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class BeanTest {
     public static void main(String[] args) {
-        Album journey = new Album();
-        Authors Adams = new Authors();
-        Authors Twain = new Authors();
-        Authors Vonnegut = new Authors();
-        Quotes Douglas = new Quotes();
-        Quotes Mark= new Quotes();
-        Quotes Kurt = new Quotes();
+        Album album = new Album();
+        album.setId(1L);
+        album.setName("Loose");
+        album.setArtist("Nelly Furtado");
+        album.setGenre("Pop, R&B");
+        album.setReleaseDate(2006);
+        album.setSales(52000);
 
-        journey.setId(37);
-        journey.setArtist("Journey");
-        journey.setName("Greatest Hits");
-        journey.setBirthDate(new Date());
-        journey.setSales(1000000);
-        journey.setGenre("pop");
-        System.out.println(journey.getArtist() + " put out their " + journey.getName() + " album and sold " + journey.getSales() + " copies" );
+        System.out.println("album.getName() = " + album.getName());
+        System.out.println("album.getArtist() = " + album.getArtist());
 
-        Adams.setFirstName("Douglas");
-        Adams.setLastName("Adams");
-        Twain.setFirstName("Mark");
-        Twain.setLastName("Twain");
-        Vonnegut.setFirstName("Kurt");
-        Vonnegut.setLastName("Vonnegut");
+        Author author = new Author();
+        author.setId(1L);
+        author.setFirstName("Douglas");
+        author.setLastName("Adams");
 
-        Douglas.setContent("Don't Panic");
-        Mark.setContent("Clothes make the man. Naked people have little or no influence on society");
-        Kurt.setContent("The universe is a big place, perhaps the biggest");
+        Quote firstQuote = new Quote();
+        firstQuote.setId(1L);
+        firstQuote.setAuthor(author);
+        firstQuote.setContent("I love deadlines. I love the whooshing noise they make as they go by.");
 
+        Quote secondQuote = new Quote();
+        secondQuote.setId(2L);
+        secondQuote.setAuthor(author);
+        secondQuote.setContent("Don't Panic.");
+
+        ArrayList<Quote> quotes = new ArrayList<>();
+        quotes.add(firstQuote);
+        quotes.add(secondQuote);
+
+        for (Quote q: quotes) {
+            System.out.println("quote.getContent() = " + q.getContent());
+            System.out.println("quote.getAuthor().getFirstName() = " + q.getAuthor().getFirstName());
+            System.out.println("quote.getAuthor().getLastName() = " + q.getAuthor().getLastName());
+        }
+
+        DaoFactory.getProductsDao().all(); // create a connection to the DB
+        DaoFactory.getProductsDao().insert(new Product()); // keeps using an existing connection to the DB
 
     }
-
 }
+
+
+
+
+
+
+//        ArrayList<Quote> quotes = new ArrayList<>();
+//        Quote first = new Quote();
+//        Quote second = new Quote();
+//
+//        first.setAuthor("Chris");
+//        first.setId(1L);
+//        first.setContent("This is Chris");
+//
+//        second.setAuthor("Lisa");
+//        second.setId(2L);
+//        second.setContent("This is me.");
+//
+//        quotes.add(first);
+//        quotes.add(second);
+//
+//        for(Quote q : quotes){
+//            System.out.println(q.getContent() + " Spoken by famous Author : " + q.getAuthor().getFirstName() + " " + q.getAuthor().getLastName());
+//        }
+//
+
+
+
+
 
 
