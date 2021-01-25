@@ -1,4 +1,5 @@
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,19 +7,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "viewProfileServlet", urlPatterns = "/login")
+@WebServlet(name = "LoginServletServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.getRequestDispatcher("/login").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getMethod().equalsIgnoreCase("post")) {
+//        if (request.getMethod().equalsIgnoreCase("post")) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             if (username.equals("admin") && password.equals("password")) {
-                request.setAttribute("username", username);
-                request.getRequestDispatcher("/login").forward(request, response);
-                return;
+                response.sendRedirect("/profile");
+            }else{
+                response.sendRedirect("/login?error=try-again");
+//                request.setAttribute("username", username);
+//                request.getRequestDispatcher("/login").forward(request, response);
+//                return;
             }
-            }
-            response.sendRedirect("/login.jsp");
     }
-}
+//            response.sendRedirect("/login.jsp");
+    }
+
