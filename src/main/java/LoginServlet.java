@@ -10,6 +10,14 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        String user = (String) session.getAttribute("user");
+
+        if (user != null){
+            response.sendRedirect("/profile");
+        } else {
+            request.getRequestDispatcher("/WEB-INF/partial/login.jsp").forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -22,7 +30,7 @@ public class LoginServlet extends HttpServlet {
         if (validAttempt && username.equals("admin")) {
             // Admin Path - the person who logged in is an admin
             session.setAttribute("isAdmin", true);
-            response.sendRedirect("/profile"); //linke
+            response.sendRedirect("/profile"); //linked to your admin profile
         } else if (validAttempt && username.equals("user")){// d up to some servlet <--pattern
             session.setAttribute("IsAdmin", false);
             response.sendRedirect("/profile");
