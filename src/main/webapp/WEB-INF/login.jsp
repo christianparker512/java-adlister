@@ -9,7 +9,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Please Login In</h1>
-    <form action="/login " method="POST">
+    <form action="/login" method="POST">
         <div class="form-group">
             <label for="username">Enter A Username</label>
             <input id="username" name="username" class="form-control" type="text">
