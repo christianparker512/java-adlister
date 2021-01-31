@@ -1,17 +1,18 @@
+
 package daos;
 
-import daos.Products;
 import models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListProducts implements Products {
-    private List<Product> products = new ArrayList();
+    private List<Product> products = new ArrayList<>();
 
     // When an instance of this class is created, we'll populate the
     // products array list with data, "faking" the records
     public ListProducts() {
+        // basically a seeder for this fake data base to have data to work with
         insert(new Product("hammer", 9.99));
         insert(new Product("screwdriver", 9.99));
         insert(new Product("drill", 19.99));

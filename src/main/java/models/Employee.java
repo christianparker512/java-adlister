@@ -4,6 +4,16 @@ import java.util.Date;
 
 public class Employee {
 
+
+    private long empNo;
+    private Date birthDate;
+    private String first_name;
+    private String last_name;
+    private char gender;
+    private Date hireDate;
+
+    public Employee(){}
+
     public Date getBirthDate() {
         return birthDate;
     }
@@ -43,15 +53,6 @@ public class Employee {
     public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
     }
-
-    private long empNo;
-    private Date birthDate;
-    private String first_name;
-    private String last_name;
-    private char gender;
-    private Date hireDate;
-
-    public Employee(){}
 
     public long getEmpNo() {
         return empNo;
