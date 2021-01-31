@@ -20,7 +20,7 @@
 <%--    &lt;%&ndash; Testing! -->--%>
 <%--    <!-- 123! -->--%>
     <h3>View Chris' Profile</h3>
-    <form action="user-profile.jsp" method="get">
+    <form action="profile.jsp" method="get">
         <input type="hidden" id="username" name="username" value="Chris">
         <input type="hidden" id="user-id" name="user-id" value ="12345">
         <button type = "submit">Go there</button>
