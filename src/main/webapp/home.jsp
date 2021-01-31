@@ -16,6 +16,7 @@
 </head>
 <body>
     <%@ include file ="partials/navbar.jsp"%>
+<%--<%@ include file ="partials/admin-nav.jsp"%>--%>
     <h1>Hello Jupiter!</h1>
 <%--    &lt;%&ndash; Testing! -->--%>
 <%--    <!-- 123! -->--%>
