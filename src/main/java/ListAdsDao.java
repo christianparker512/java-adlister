@@ -16,14 +16,14 @@ public class ListAdsDao implements Ads {
         ads.add(new Ad(
             1,
             1,
-            "playstation for sale",
-            "This is a slightly used playstation"
+            "Whistle Pig - Rye",
+            "Smooth and delicious - aged 12 years"
         ));
         ads.add(new Ad(
             2,
             1,
-            "Super Nintendo",
-            "Get your game on with this old-school classic!"
+            "2001 Jaguar XKR - convertible",
+            "A man's car. Silver and sleek. Channel your inner James Bond!"
         ));
         ads.add(new Ad(
             3,
@@ -35,7 +35,7 @@ public class ListAdsDao implements Ads {
             4,
             2,
             "JavaScript Developer needed",
-            "Must have strong Java skills"
+            "Must have strong Java skills, CSS, "
         ));
         return ads;
     }
