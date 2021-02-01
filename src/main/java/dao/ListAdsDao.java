@@ -1,4 +1,4 @@
-package dao;
+package com.codeup.adlister.dao;
 
 import dao.Ads;
 
