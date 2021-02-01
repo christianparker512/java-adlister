@@ -1,11 +1,13 @@
 import com.mysql.cj.jdbc.Driver;
+
+import javax.servlet.jsp.jstl.core.Config;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
-//    Config config = new Config();
+    Config config = new Config();
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
